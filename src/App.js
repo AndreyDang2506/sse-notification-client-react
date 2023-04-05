@@ -37,7 +37,8 @@ class App extends Component {
 
   initListener = () => {
     const username = this.state.loggedInUser;
-    const eventSource = new EventSource(`http://localhost:8080/subscription?id=${username}`);
+    const sessionId = new Date().getTime();
+    const eventSource = new EventSource(`http://localhost:5003/subscription?id=${username}&sessionId=${sessionId}`);
 
     eventSource.onopen = (e) => console.log("open");
 

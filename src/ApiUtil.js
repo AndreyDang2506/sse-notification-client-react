@@ -20,7 +20,7 @@ const request = (options) => {
 
 export function sendNotification(username, notificationRequest) {
   return request({
-    url: "http://localhost:8080/notification/" + username,
+    url: "http://localhost:5003/notification/" + username,
     method: "POST",
     body: JSON.stringify(notificationRequest),
   });
